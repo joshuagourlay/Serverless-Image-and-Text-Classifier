@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "paths": {
+    "/image": {
+      "name": "/image",
+      "lambdaFunction": "imageClassifier",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/text": {
+      "name": "/text",
+      "lambdaFunction": "textClassifier",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
