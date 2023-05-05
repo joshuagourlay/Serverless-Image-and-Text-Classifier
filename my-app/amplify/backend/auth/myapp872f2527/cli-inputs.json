@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "myapp_identitypool_8c67b78e",
+    "identityPoolName": "myapp872f2527_identitypool_872f2527",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "myapp8c67b78e",
-    "userPoolName": "myapp_userpool_8c67b78e",
+    "resourceNameTruncated": "myapp872f2527",
+    "userPoolName": "myapp872f2527_userpool_872f2527",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,12 +31,23 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "myapp8c67b78e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "myapp8872f2527_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
+    "sharedId": "872f2527",
+    "resourceName": "myapp872f2527",
     "authSelections": "identityPoolAndUserPool",
-    "resourceName": "myapp",
-    "sharedId": "8c67b78e",
+    "useDefault": "defaultSocial",
+    "hostedUI": true,
+    "usernameAttributes": [
+      "email"
+    ],
+    "hostedUIDomainName": "myapp872f2527-872f2527",
+    "authProvidersUserPool": [],
+    "hostedUIProviderMeta": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+    "userPoolGroupList": [],
     "serviceName": "Cognito",
-    "useDefault": "manual"
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
   }
 }

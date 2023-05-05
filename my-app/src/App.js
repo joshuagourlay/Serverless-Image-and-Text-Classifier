@@ -1,29 +1,37 @@
-import React, { useState } from 'react';
+import { useRef, useState } from 'react';
 import './App.css';
 import { uploadImage } from './uploadImage';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
 function App() {
-  const [file, setFile] = useState(null);
+  const fileInput = useRef(null);
   const [labels, setLabels] = useState([]);
-
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
+  const [uploadedImageURL, setUploadedImageURL] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!file) return;
-    const imageLabels = await uploadImage(file);
+    if (!fileInput.current.files[0]) return;
+    const imageFile = fileInput.current.files[0];
+    const imageLabels = await uploadImage(imageFile);
+    console.log("Image labels: ", imageLabels);
     setLabels(imageLabels);
+    const imageURL = URL.createObjectURL(imageFile);
+    setUploadedImageURL(imageURL);
   };
 
   return (
     <div className="App">
       <h1>Image Recognition App</h1>
       <form onSubmit={handleSubmit}>
-        <input type="file" onChange={handleFileChange} />
+        <input type="file" ref={fileInput} />
         <button type="submit">Analyze Image</button>
       </form>
+      {uploadedImageURL && (
+        <div>
+          <h2>Uploaded Image:</h2>
+          <img src={uploadedImageURL} alt="Uploaded" style={{ maxWidth: '100%' }} />
+        </div>
+)}
       {labels.length > 0 && (
         <div>
           <h2>Labels:</h2>
@@ -38,4 +46,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

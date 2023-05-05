@@ -13,13 +13,10 @@
       "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-myapp-dev-02828-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
-      "auth": {
-        "myapp": {}
-      },
       "function": {
         "imageClassifier": {
           "deploymentBucketName": "amplify-myapp-dev-02828-deployment",
-          "s3Key": "amplify-builds/imageClassifier-77436c6261422b6f336d-build.zip"
+          "s3Key": "amplify-builds/imageClassifier-346c4947756f57776868-build.zip"
         },
         "textClassifier": {
           "deploymentBucketName": "amplify-myapp-dev-02828-deployment",
@@ -31,6 +28,9 @@
       },
       "storage": {
         "s3e3f771a0": {}
+      },
+      "auth": {
+        "myapp872f2527": {}
       }
     }
   }
